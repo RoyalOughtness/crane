@@ -3,7 +3,7 @@
 
 # https://github.com/google/go-containerregistry
 %global goipath         github.com/google/go-containerregistry
-Version:                0.21.0
+Version:                0.21.1
 
 %gometa -L -f
 
