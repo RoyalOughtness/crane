@@ -9,7 +9,6 @@
 
 set -eux
 
-git clone https://github.com/secureblue/crane.git
 VERSION=$(grep -oP -m1 '^Version:\s+\K\S+' crane/crane.spec)
 (
     cd crane
