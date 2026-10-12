@@ -1,0 +1,33 @@
+{
+  extends: [
+    'config:best-practices',
+  ],
+  customManagers: [
+    {
+      customType: 'regex',
+      managerFilePatterns: [
+        '/\\.spec$/',
+      ],
+      matchStrings: [
+        '#\\s?renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( extractVersion=(?<extractVersion>\\S+))?\\s*Version:\\s*(?<currentValue>\\S+)',
+      ],
+    },
+  ],
+  packageRules: [
+    {
+      enabled: false,
+      matchUpdateTypes: [
+        'digest',
+        'pinDigest',
+        'pin',
+      ],
+      matchDepTypes: [
+        'container',
+      ],
+      matchFileNames: [
+        '.github/workflows/**.yaml',
+        '.github/workflows/**.yml',
+      ],
+    },
+  ],
+}
